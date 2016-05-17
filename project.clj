@@ -6,7 +6,7 @@
   :dependencies [[luminus-log4j "0.1.3"]
                  [org.clojure/clojure "1.8.0"]
                  [selmer "1.0.4"]
-                 [markdown-clj "0.9.89"]
+                 [markdown-clj "0.9.86"]
                  [ring-middleware-format "0.7.0"]
                  [metosin/ring-http-response "0.6.5"]
                  [bouncer "1.0.0"]
@@ -19,11 +19,11 @@
                  [ring-webjars "0.1.1"]
                  [ring/ring-defaults "0.2.0"]
                  [mount "0.1.10"]
-                 [cprop "0.1.7"]
-                 [org.clojure/tools.cli "0.3.5"]
+                 [cprop "0.1.6"]
+                 [org.clojure/tools.cli "0.3.3"]
                  [luminus-nrepl "0.1.4"]
-                 [luminus-migrations "0.1.5"]
-                 [conman "0.5.5"]
+                 [luminus-migrations "0.1.0"]
+                 [conman "0.4.6"]
                  [com.h2database/h2 "1.4.191"]
                  [org.webjars/webjars-locator-jboss-vfs "0.1.0"]
                  [luminus-immutant "0.2.0"]]
@@ -38,7 +38,7 @@
   :migratus {:store :database :db ~(get (System/getenv) "DATABASE_URL")}
 
   :plugins [[lein-cprop "1.0.1"]
-            [migratus-lein "0.3.1"]]
+            [migratus-lein "0.2.6"]]
   :target-path "target/%s/"
   :profiles
   {:uberjar {:omit-source true
@@ -49,10 +49,10 @@
              :resource-paths ["env/prod/resources"]}
    :dev           [:project/dev :profiles/dev]
    :test          [:project/test :profiles/test]
-   :project/dev  {:dependencies [[prone "1.1.1"]
+   :project/dev  {:dependencies [[prone "1.0.2"]
                                  [ring/ring-mock "0.3.0"]
                                  [ring/ring-devel "1.4.0"]
-                                 [pjstadig/humane-test-output "0.8.0"]]
+                                 [pjstadig/humane-test-output "0.7.1"]]
                   :plugins      [[com.jakemccrary/lein-test-refresh "0.14.0"]]
                   
                   
